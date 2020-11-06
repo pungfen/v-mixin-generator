@@ -67,12 +67,12 @@ const mixinsGeneratorRecursion = function (expression, config, data) {
 const mixinsGenerator = function (config) {
   const { prop } = config
   const result = {}
-  result.created = function () {
-    let generatorConfig = this.$options[prop]
-    if (generatorConfig) {
-      const _this = this
-      mixinsGeneratorRecursion.call(this, '', generatorConfig, _this)
-    }
+
+  result.data = function () {
+    let data = {}
+    const generatorConfig = this.$options[prop]
+    if (generatorConfig) mixinsGeneratorRecursion.call(this, '', generatorConfig, data)
+    return data
   }
 
   return result
