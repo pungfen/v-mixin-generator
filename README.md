@@ -9,6 +9,7 @@ Vue.use(VMixinGenerator, { prop: 'generator' })
 
 ## component
 
+```javascript
 export default {
   name: 'App',
 
@@ -24,3 +25,5 @@ export default {
     dialog: {}
   }
 }
+
+```
